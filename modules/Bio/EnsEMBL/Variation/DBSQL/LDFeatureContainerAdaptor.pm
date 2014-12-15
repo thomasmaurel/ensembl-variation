@@ -391,7 +391,7 @@ sub _fetch_by_Slice_VCF {
     
     # get "raw" genotypes; comes back as a hash like $hash->{$pos}->{$ind_name} = $gt
     # doing this saves constructing objects we don't need e.g. Genotypes, VariationFeatures
-    my $vc_genotypes = $vc->get_all_LD_genotypes_by_Slice($slice, $population);
+    my $vc_genotypes = $vc->_get_all_LD_genotypes_by_Slice($slice, $population);
     
     # copy them to main $genotypes hash
     foreach my $p(keys %$vc_genotypes) {
